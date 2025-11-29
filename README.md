@@ -1,73 +1,193 @@
-# Welcome to your Lovable project
+# Personal Portfolio Website
 
-## Project info
+A modern, dark-themed personal portfolio website featuring heavy animations, 3D visuals, and interactive backgrounds. Built with React.js and designed with a cyberpunk aesthetic.
 
-**URL**: https://lovable.dev/projects/a3253905-fbce-40e4-a48d-502cc0349ac6
+## 🚀 Features
 
-## How can I edit this code?
+- **Interactive 3D Hero Section** - Animated sphere using Three.js
+- **Particle Background** - Dynamic particle effects throughout the site
+- **Smooth Page Transitions** - Fluid animations using Framer Motion
+- **Responsive Design** - Optimized for all devices
+- **Dark Cyberpunk Theme** - Neon colors with glassmorphism effects
+- **Multiple Sections:**
+  - Home with personal branding
+  - About Me page
+  - Interactive Projects showcase
+  - Animated Skills visualization
+  - Contact form
+  - Featured Articles
+  - Coding Profiles display
+  - Downloadable Resume
 
-There are several ways of editing your application.
+## 🛠️ Technology Stack
 
-**Use Lovable**
+### Core
+- **React 18.3** - Frontend framework
+- **TypeScript** - Type safety
+- **Vite** - Build tool and dev server
+- **React Router** - Client-side routing
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/a3253905-fbce-40e4-a48d-502cc0349ac6) and start prompting.
+### Styling & UI
+- **Tailwind CSS** - Utility-first CSS framework
+- **shadcn/ui** - Component library
+- **Radix UI** - Accessible component primitives
 
-Changes made via Lovable will be committed automatically to this repo.
+### Animations & 3D
+- **Framer Motion** - Page and component animations
+- **Three.js** - 3D graphics
+- **React Three Fiber** - React renderer for Three.js
+- **React Three Drei** - Three.js helpers
+- **Particles.js** - Interactive particle backgrounds
 
-**Use your preferred IDE**
+### Other Libraries
+- **React Query** - Data fetching and caching
+- **React Hook Form** - Form management
+- **Zod** - Schema validation
+- **Lucide React** - Icon library
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
+## 📦 Installation
 
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
+### Prerequisites
+- Node.js (v16 or higher)
+- npm or yarn
 
-Follow these steps:
+### Setup
 
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
+```bash
+# Clone the repository
+git clone <your-repo-url>
 
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
+# Navigate to project directory
+cd <project-name>
 
-# Step 3: Install the necessary dependencies.
-npm i
+# Install dependencies
+npm install
 
-# Step 4: Start the development server with auto-reloading and an instant preview.
+# Start development server
 npm run dev
 ```
 
-**Edit a file directly in GitHub**
+The application will be available at `http://localhost:8080`
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+## 🏗️ Project Structure
 
-**Use GitHub Codespaces**
+```
+src/
+├── components/
+│   ├── ui/              # shadcn/ui components
+│   ├── Hero3D.tsx       # 3D animated sphere
+│   ├── Navigation.tsx   # Main navigation
+│   ├── ParticleBackground.tsx
+│   ├── PageTransition.tsx
+│   └── SocialLinks.tsx
+├── pages/
+│   ├── Home.tsx
+│   ├── About.tsx
+│   ├── Resume.tsx
+│   ├── Projects.tsx
+│   ├── Skills.tsx
+│   ├── Contact.tsx
+│   ├── Articles.tsx
+│   └── CodingProfiles.tsx
+├── lib/
+│   └── utils.ts
+├── App.tsx
+├── main.tsx
+└── index.css
+```
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
+## 🎨 Design System
 
-## What technologies are used for this project?
+The project uses a custom cyberpunk-themed design system with:
+- **Primary Color**: Electric Cyan (`#06b6d4`)
+- **Secondary Color**: Deep Purple (`#a855f7`)
+- **Accent Color**: Magenta (`#ec4899`)
+- **Glassmorphism Effects**: Blur and transparency
+- **Neon Glow Shadows**: CSS custom properties
+- **Custom Animations**: Float, pulse, slide effects
 
-This project is built with:
+## 📜 Available Scripts
 
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
+```bash
+# Start development server
+npm run dev
 
-## How can I deploy this project?
+# Build for production
+npm run build
 
-Simply open [Lovable](https://lovable.dev/projects/a3253905-fbce-40e4-a48d-502cc0349ac6) and click on Share -> Publish.
+# Preview production build
+npm run preview
 
-## Can I connect a custom domain to my Lovable project?
+# Lint code
+npm run lint
+```
 
-Yes, you can!
+## 🌐 Deployment
 
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
+Build the project:
+```bash
+npm run build
+```
 
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/features/custom-domain#custom-domain)
+The `dist` folder will contain the production-ready files that can be deployed to any static hosting service like:
+- Vercel
+- Netlify
+- GitHub Pages
+- AWS S3
+- Firebase Hosting
+
+## 🎯 Key Features Explained
+
+### 3D Animations
+The homepage features an interactive 3D sphere created with Three.js that responds to user interaction via orbit controls.
+
+### Particle System
+Background particles create an immersive cyberpunk atmosphere and respond to mouse movement.
+
+### Page Transitions
+Each page transition uses Framer Motion for smooth, animated navigation between routes.
+
+### Skills Visualization
+Animated progress bars showcase technical proficiency with smooth reveal animations.
+
+### Project Cards
+Interactive project cards with hover effects and expandable modals for detailed information.
+
+## 📱 Responsive Design
+
+The portfolio is fully responsive with:
+- Mobile-first approach
+- Hamburger menu for mobile navigation
+- Optimized 3D performance on smaller devices
+- Touch-friendly interactive elements
+
+## 🔧 Customization
+
+### Colors
+Edit `src/index.css` to customize the color scheme. All colors use HSL format and CSS custom properties.
+
+### Content
+- Update personal information in `src/pages/Home.tsx`
+- Modify bio in `src/pages/About.tsx`
+- Add projects in `src/pages/Projects.tsx`
+- Update skills in `src/pages/Skills.tsx`
+
+### Animations
+Adjust animation timings and effects in `tailwind.config.ts` and component files.
+
+## 📄 License
+
+This project is open source and available under the [MIT License](LICENSE).
+
+## 👤 Author
+
+Your Name
+- GitHub: [@yourusername](https://github.com/yourusername)
+- LinkedIn: [Your Name](https://linkedin.com/in/yourprofile)
+- Email: your.email@example.com
+
+## 🙏 Acknowledgments
+
+- Design inspiration from modern portfolio websites
+- shadcn/ui for the beautiful component library
+- Three.js community for 3D graphics resources
