@@ -182,8 +182,8 @@ This project is open source and available under the [MIT License](LICENSE).
 ## 👤 Author
 
 Your Name
-- GitHub: [@yourusername](https://github.com/JOKER1711790)
-- LinkedIn: [Your Name](https://www.linkedin.com/in/tarun-kumar-s-a-56369b384/)
+- GitHub: [@JOKER1711790](https://github.com/JOKER1711790)
+- LinkedIn: [Tarun Kumar](https://www.linkedin.com/in/tarun-kumar-s-a-56369b384/)
 - Email: sa.tarunkumar31@gmail.com
 
 ## 🙏 Acknowledgments
