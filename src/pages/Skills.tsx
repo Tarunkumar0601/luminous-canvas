@@ -1,6 +1,7 @@
 import PageTransition from "@/components/PageTransition";
 import { motion } from "framer-motion";
 import { Progress } from "@/components/ui/progress";
+import { Award } from "lucide-react";
 
 interface Skill {
   name: string;
@@ -9,16 +10,32 @@ interface Skill {
 }
 
 const skills: Skill[] = [
-  { name: "React / Next.js", level: 95, category: "Frontend" },
-  { name: "TypeScript", level: 90, category: "Frontend" },
-  { name: "Three.js / WebGL", level: 85, category: "3D Graphics" },
-  { name: "Framer Motion", level: 90, category: "Animation" },
-  { name: "Node.js / Express", level: 85, category: "Backend" },
-  { name: "PostgreSQL / MongoDB", level: 80, category: "Database" },
-  { name: "Docker / CI/CD", level: 75, category: "DevOps" },
-  { name: "Tailwind CSS", level: 95, category: "Styling" },
-  { name: "REST / GraphQL", level: 85, category: "APIs" },
-  { name: "Git / GitHub", level: 90, category: "Tools" },
+  { name: "C / C++", level: 75, category: "Languages" },
+  { name: "JavaScript", level: 80, category: "Languages" },
+  { name: "Python", level: 70, category: "Languages" },
+  { name: "Java", level: 65, category: "Languages" },
+  { name: "C#", level: 60, category: "Languages" },
+  { name: "React.js", level: 80, category: "Frontend" },
+  { name: "HTML / CSS", level: 85, category: "Frontend" },
+  { name: "Node.js / Express", level: 75, category: "Backend" },
+  { name: "Flask / Django", level: 65, category: "Backend" },
+  { name: "Spring Boot", level: 55, category: "Backend" },
+  { name: "MongoDB", level: 75, category: "Database" },
+  { name: "MySQL / SQL Server", level: 70, category: "Database" },
+  { name: "Git / GitHub", level: 80, category: "DevOps & Tools" },
+  { name: "Docker", level: 60, category: "DevOps & Tools" },
+  { name: "Jenkins (CI/CD)", level: 55, category: "DevOps & Tools" },
+  { name: "Linux / Shell Scripting", level: 60, category: "DevOps & Tools" },
+  { name: "AWS", level: 50, category: "DevOps & Tools" },
+];
+
+const certifications = [
+  "Hackfest '24",
+  "PyExpo – 3rd place at Advanced level",
+  "Introduction to Git and GitHub (Google)",
+  "Jenkins for Beginners (KodeKloud)",
+  "Testing and Advanced REST with Spring Boot (Packt)",
+  "Oracle Cloud Infrastructure 2023 AI Certified Foundations Associate",
 ];
 
 const categories = Array.from(new Set(skills.map((s) => s.category)));
@@ -92,15 +109,42 @@ const Skills = () => {
           ))}
         </div>
 
+        {/* Certifications */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.8 }}
+          className="glass rounded-3xl p-8 space-y-6"
+        >
+          <h2 className="text-2xl font-heading font-bold text-primary flex items-center gap-2">
+            <Award className="w-6 h-6" />
+            Certifications & Achievements
+          </h2>
+          <div className="grid md:grid-cols-2 gap-4">
+            {certifications.map((cert, index) => (
+              <motion.div
+                key={cert}
+                initial={{ opacity: 0, x: -20 }}
+                animate={{ opacity: 1, x: 0 }}
+                transition={{ delay: 0.9 + index * 0.05 }}
+                className="flex items-center gap-3 p-3 rounded-xl bg-primary/5 border border-primary/20"
+              >
+                <div className="w-2 h-2 rounded-full bg-primary" />
+                <span className="text-foreground">{cert}</span>
+              </motion.div>
+            ))}
+          </div>
+        </motion.div>
+
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 1 }}
           className="glass rounded-3xl p-8 text-center"
         >
           <p className="text-lg text-muted-foreground">
-            Always learning and exploring new technologies to stay at the
-            forefront of web development
+            Soft Skills: Problem-solving, analytical thinking, adaptability to new technologies, 
+            teamwork and communication, time management and discipline
           </p>
         </motion.div>
       </div>

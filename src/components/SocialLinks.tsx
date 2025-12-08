@@ -1,11 +1,10 @@
 import { motion } from "framer-motion";
-import { Github, Linkedin, Twitter, Mail } from "lucide-react";
+import { Github, Linkedin, Mail } from "lucide-react";
 
 const socialLinks = [
-  { icon: Github, url: "https://github.com", label: "GitHub" },
-  { icon: Linkedin, url: "https://linkedin.com", label: "LinkedIn" },
-  { icon: Twitter, url: "https://twitter.com", label: "Twitter" },
-  { icon: Mail, url: "mailto:hello@portfolio.com", label: "Email" },
+  { icon: Github, url: "https://github.com/JOKER1711790", label: "GitHub" },
+  { icon: Linkedin, url: "https://www.linkedin.com/in/tarun-kumar-s-a-56369b384/", label: "LinkedIn" },
+  { icon: Mail, url: "mailto:sa.tarunkumar31@gmail.com", label: "Email" },
 ];
 
 const SocialLinks = () => {

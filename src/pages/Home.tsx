@@ -34,9 +34,9 @@ const Home = () => {
               transition={{ delay: 0.6 }}
               className="text-5xl md:text-7xl font-heading font-bold leading-tight"
             >
-              Creative
+              Hi, I'm
               <br />
-              <span className="text-gradient-primary">Developer</span>
+              <span className="text-gradient-primary">Tarun Kumar</span>
             </motion.h1>
 
             <motion.p
@@ -45,8 +45,9 @@ const Home = () => {
               transition={{ delay: 0.7 }}
               className="text-lg text-muted-foreground leading-relaxed"
             >
-              Crafting immersive digital experiences with cutting-edge technologies.
-              Specializing in 3D visuals, interactive animations, and modern web development.
+              Results-driven Full Stack Developer with expertise in MERN stack, REST APIs, 
+              and SQL databases. Passionate about building clear, testable, and production-ready 
+              code with ownership from development through deployment.
             </motion.p>
 
             <motion.div

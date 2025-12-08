@@ -1,14 +1,12 @@
 import PageTransition from "@/components/PageTransition";
 import { motion } from "framer-motion";
-import { ExternalLink, Trophy, Star, TrendingUp } from "lucide-react";
+import { ExternalLink, Code, Award } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 interface Profile {
   platform: string;
   username: string;
-  rating: string;
-  rank: string;
-  problemsSolved: string;
+  description: string;
   url: string;
   color: string;
   icon: string;
@@ -17,43 +15,45 @@ interface Profile {
 const profiles: Profile[] = [
   {
     platform: "LeetCode",
-    username: "codeMaster",
-    rating: "2450",
-    rank: "Knight",
-    problemsSolved: "850+",
+    username: "tarunkumar",
+    description: "Practicing data structures and algorithms",
     url: "https://leetcode.com",
     color: "from-orange-500 to-yellow-500",
     icon: "L",
   },
   {
-    platform: "Codeforces",
-    username: "competitive_dev",
-    rating: "1850",
-    rank: "Expert",
-    problemsSolved: "500+",
-    url: "https://codeforces.com",
-    color: "from-blue-500 to-cyan-500",
-    icon: "CF",
-  },
-  {
     platform: "HackerRank",
-    username: "devExpert",
-    rating: "Gold",
-    rank: "5 Star",
-    problemsSolved: "650+",
+    username: "tarunkumar",
+    description: "Problem solving and skill certifications",
     url: "https://hackerrank.com",
     color: "from-green-500 to-emerald-500",
     icon: "HR",
   },
   {
-    platform: "CodeChef",
-    username: "chefCoder",
-    rating: "1920",
-    rank: "4 Star",
-    problemsSolved: "400+",
-    url: "https://codechef.com",
-    color: "from-purple-500 to-pink-500",
-    icon: "CC",
+    platform: "GitHub",
+    username: "JOKER1711790",
+    description: "Open source projects and contributions",
+    url: "https://github.com/JOKER1711790",
+    color: "from-gray-600 to-gray-800",
+    icon: "GH",
+  },
+];
+
+const achievements = [
+  {
+    title: "Hackfest '24",
+    description: "Participated in hackathon competition",
+    icon: "🏆",
+  },
+  {
+    title: "PyExpo – 3rd Place",
+    description: "Advanced level Python competition",
+    icon: "🥉",
+  },
+  {
+    title: "Oracle Cloud AI Certified",
+    description: "OCI 2023 AI Foundations Associate",
+    icon: "☁️",
   },
 ];
 
@@ -71,11 +71,11 @@ const CodingProfiles = () => {
             Coding Profiles
           </h1>
           <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-            Competitive programming achievements across platforms
+            Problem-solving journey and competitive programming
           </p>
         </motion.div>
 
-        <div className="grid md:grid-cols-2 gap-6">
+        <div className="grid md:grid-cols-3 gap-6">
           {profiles.map((profile, index) => (
             <motion.div
               key={profile.platform}
@@ -86,55 +86,23 @@ const CodingProfiles = () => {
               className="glass rounded-3xl p-8 space-y-6 group"
             >
               {/* Platform Header */}
-              <div className="flex items-center justify-between">
-                <div className="flex items-center gap-4">
-                  <div className={`w-16 h-16 rounded-2xl bg-gradient-to-br ${profile.color} flex items-center justify-center text-2xl font-heading font-bold text-white shadow-lg`}>
-                    {profile.icon}
-                  </div>
-                  <div>
-                    <h2 className="text-2xl font-heading font-bold group-hover:text-primary transition-colors">
-                      {profile.platform}
-                    </h2>
-                    <p className="text-sm text-muted-foreground">
-                      @{profile.username}
-                    </p>
-                  </div>
+              <div className="flex items-center gap-4">
+                <div className={`w-16 h-16 rounded-2xl bg-gradient-to-br ${profile.color} flex items-center justify-center text-2xl font-heading font-bold text-white shadow-lg`}>
+                  {profile.icon}
                 </div>
-                <Trophy className="w-8 h-8 text-primary animate-pulse-glow" />
-              </div>
-
-              {/* Stats */}
-              <div className="grid grid-cols-3 gap-4">
-                <div className="space-y-1">
-                  <div className="flex items-center gap-2 text-muted-foreground text-sm">
-                    <Star className="w-4 h-4" />
-                    <span>Rating</span>
-                  </div>
-                  <p className="text-xl font-heading font-bold text-primary">
-                    {profile.rating}
-                  </p>
-                </div>
-
-                <div className="space-y-1">
-                  <div className="flex items-center gap-2 text-muted-foreground text-sm">
-                    <TrendingUp className="w-4 h-4" />
-                    <span>Rank</span>
-                  </div>
-                  <p className="text-xl font-heading font-bold text-secondary">
-                    {profile.rank}
-                  </p>
-                </div>
-
-                <div className="space-y-1">
-                  <div className="flex items-center gap-2 text-muted-foreground text-sm">
-                    <Trophy className="w-4 h-4" />
-                    <span>Solved</span>
-                  </div>
-                  <p className="text-xl font-heading font-bold text-accent">
-                    {profile.problemsSolved}
+                <div>
+                  <h2 className="text-xl font-heading font-bold group-hover:text-primary transition-colors">
+                    {profile.platform}
+                  </h2>
+                  <p className="text-sm text-muted-foreground">
+                    @{profile.username}
                   </p>
                 </div>
               </div>
+
+              <p className="text-muted-foreground">
+                {profile.description}
+              </p>
 
               {/* Action Button */}
               <motion.div whileHover={{ scale: 1.02 }} whileTap={{ scale: 0.98 }}>
@@ -150,16 +118,50 @@ const CodingProfiles = () => {
           ))}
         </div>
 
+        {/* Achievements Section */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.7 }}
+          transition={{ delay: 0.6 }}
+          className="glass rounded-3xl p-8 space-y-6"
+        >
+          <h2 className="text-2xl font-heading font-bold text-primary flex items-center gap-2">
+            <Award className="w-6 h-6" />
+            Achievements & Competitions
+          </h2>
+          <div className="grid md:grid-cols-3 gap-4">
+            {achievements.map((achievement, index) => (
+              <motion.div
+                key={achievement.title}
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.7 + index * 0.1 }}
+                className="p-4 rounded-xl bg-primary/5 border border-primary/20 flex items-start gap-3"
+              >
+                <span className="text-2xl">{achievement.icon}</span>
+                <div>
+                  <h3 className="font-heading font-bold">{achievement.title}</h3>
+                  <p className="text-sm text-muted-foreground">{achievement.description}</p>
+                </div>
+              </motion.div>
+            ))}
+          </div>
+        </motion.div>
+
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.9 }}
           className="glass rounded-3xl p-8 text-center"
         >
+          <div className="flex items-center justify-center gap-2 mb-4">
+            <Code className="w-6 h-6 text-primary" />
+            <span className="text-lg font-heading font-bold">Continuous Learning</span>
+          </div>
           <p className="text-lg text-muted-foreground">
             Passionate about problem-solving and algorithmic challenges. Actively
-            participating in competitive programming contests and continuously
-            improving coding skills.
+            participating in coding competitions and continuously improving skills
+            in data structures, algorithms, and system design.
           </p>
         </motion.div>
       </div>

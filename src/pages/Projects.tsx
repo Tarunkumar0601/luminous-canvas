@@ -14,6 +14,7 @@ import {
 interface Project {
   id: number;
   title: string;
+  category: string;
   description: string;
   technologies: string[];
   image: string;
@@ -24,39 +25,38 @@ interface Project {
 const projects: Project[] = [
   {
     id: 1,
-    title: "3D Portfolio Experience",
-    description: "An immersive portfolio website featuring Three.js 3D elements, particle effects, and smooth Framer Motion animations. Built with React and modern web technologies.",
-    technologies: ["React", "Three.js", "Framer Motion", "TypeScript"],
-    image: "https://images.unsplash.com/photo-1633356122544-f134324a6cee?w=800&h=600&fit=crop",
-    github: "https://github.com",
-    demo: "https://demo.com",
+    title: "Cyber View Center",
+    category: "Cybersecurity Monitoring System",
+    description: "Developed a full-stack web application for real-time cybersecurity incident monitoring. Implemented incident tracking, role-based access control, and data visualization. Integrated JWT authentication and designed scalable architecture for future AI-based threat analysis and WebSocket live updates.",
+    technologies: ["React.js", "Node.js", "Express", "MongoDB", "JWT"],
+    image: "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?w=800&h=600&fit=crop",
+    github: "https://github.com/JOKER1711790",
   },
   {
     id: 2,
-    title: "E-Commerce Platform",
-    description: "Full-stack e-commerce solution with real-time inventory management, secure payments, and admin dashboard. Features responsive design and optimized performance.",
-    technologies: ["Next.js", "Node.js", "PostgreSQL", "Stripe"],
-    image: "https://images.unsplash.com/photo-1557821552-17105176677c?w=800&h=600&fit=crop",
-    github: "https://github.com",
-    demo: "https://demo.com",
+    title: "Elite Placement Portal",
+    category: "Placement Management Platform",
+    description: "A web-based platform to streamline and manage campus placement processes. Allows students to view, apply, and track company drives. Provides an organized dashboard for placement coordinators.",
+    technologies: ["React.js", "Node.js", "MongoDB", "Express"],
+    image: "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=800&h=600&fit=crop",
+    github: "https://github.com/JOKER1711790",
   },
   {
     id: 3,
-    title: "AI Chat Application",
-    description: "Real-time chat application powered by AI with natural language processing, sentiment analysis, and smart replies. Includes voice messages and media sharing.",
-    technologies: ["React", "OpenAI", "WebSockets", "Firebase"],
-    image: "https://images.unsplash.com/photo-1587825140708-dfaf72ae4b04?w=800&h=600&fit=crop",
-    github: "https://github.com",
-    demo: "https://demo.com",
+    title: "E-Commerce Website",
+    category: "Web Application",
+    description: "Developed a full-featured e-commerce website using the MERN stack that allows users to browse products, add items to a cart, and securely complete purchases. Implemented user authentication, product management, and order tracking.",
+    technologies: ["MongoDB", "Express.js", "React.js", "Node.js"],
+    image: "https://images.unsplash.com/photo-1557821552-17105176677c?w=800&h=600&fit=crop",
+    github: "https://github.com/JOKER1711790",
   },
   {
     id: 4,
-    title: "Task Management System",
-    description: "Collaborative project management tool with Kanban boards, team collaboration features, and real-time updates. Includes time tracking and reporting.",
-    technologies: ["Vue.js", "Express", "MongoDB", "Socket.io"],
-    image: "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=800&h=600&fit=crop",
-    github: "https://github.com",
-    demo: "https://demo.com",
+    title: "Assessment Portal - SEED",
+    category: "Assessment Platform",
+    description: "An exclusive platform designed specifically for conducting aptitude assessments. Built with React, HTML, and CSS during Front-End Developer internship. Enhanced user interaction and responsiveness with collaborative development via Git.",
+    technologies: ["React", "HTML", "CSS", "Git"],
+    image: "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?w=800&h=600&fit=crop",
   },
 ];
 
@@ -76,7 +76,7 @@ const Projects = () => {
             Featured Projects
           </h1>
           <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-            Showcasing innovative solutions and creative implementations
+            Full-stack applications and innovative solutions
           </p>
         </motion.div>
 
@@ -100,9 +100,12 @@ const Projects = () => {
               </div>
               
               <div className="p-6 space-y-4">
-                <h3 className="text-2xl font-heading font-bold group-hover:text-primary transition-colors">
-                  {project.title}
-                </h3>
+                <div>
+                  <p className="text-sm text-primary mb-1">{project.category}</p>
+                  <h3 className="text-2xl font-heading font-bold group-hover:text-primary transition-colors">
+                    {project.title}
+                  </h3>
+                </div>
                 
                 <p className="text-muted-foreground line-clamp-2">
                   {project.description}
@@ -160,6 +163,7 @@ const Projects = () => {
                 {selectedProject?.title}
               </DialogTitle>
               <DialogDescription className="text-base pt-4 space-y-4">
+                <p className="text-primary">{selectedProject?.category}</p>
                 <p>{selectedProject?.description}</p>
                 
                 <div className="flex flex-wrap gap-2">
