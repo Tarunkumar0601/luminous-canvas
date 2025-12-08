@@ -27,9 +27,9 @@ const Contact = () => {
   };
 
   const contactInfo = [
-    { icon: Mail, label: "Email", value: "hello@portfolio.com" },
-    { icon: Phone, label: "Phone", value: "+1 (555) 123-4567" },
-    { icon: MapPin, label: "Location", value: "San Francisco, CA" },
+    { icon: Mail, label: "Email", value: "sa.tarunkumar31@gmail.com" },
+    { icon: Phone, label: "Phone", value: "+91 80726 25476" },
+    { icon: MapPin, label: "Location", value: "Komarapalayam, Tamil Nadu, India" },
   ];
 
   return (
@@ -150,16 +150,34 @@ const Contact = () => {
                 Follow me on social media for updates and insights
               </p>
               <div className="flex gap-3">
-                {["Github", "LinkedIn", "Twitter"].map((platform) => (
-                  <motion.button
-                    key={platform}
-                    whileHover={{ scale: 1.1 }}
-                    whileTap={{ scale: 0.9 }}
-                    className="w-10 h-10 rounded-lg bg-primary/10 hover:bg-primary/20 flex items-center justify-center text-primary transition-colors"
-                  >
-                    {platform[0]}
-                  </motion.button>
-                ))}
+                <motion.a
+                  href="https://github.com/JOKER1711790"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  whileHover={{ scale: 1.1 }}
+                  whileTap={{ scale: 0.9 }}
+                  className="w-10 h-10 rounded-lg bg-primary/10 hover:bg-primary/20 flex items-center justify-center text-primary transition-colors font-bold"
+                >
+                  G
+                </motion.a>
+                <motion.a
+                  href="https://www.linkedin.com/in/tarun-kumar-s-a-56369b384/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  whileHover={{ scale: 1.1 }}
+                  whileTap={{ scale: 0.9 }}
+                  className="w-10 h-10 rounded-lg bg-primary/10 hover:bg-primary/20 flex items-center justify-center text-primary transition-colors font-bold"
+                >
+                  L
+                </motion.a>
+                <motion.a
+                  href="mailto:sa.tarunkumar31@gmail.com"
+                  whileHover={{ scale: 1.1 }}
+                  whileTap={{ scale: 0.9 }}
+                  className="w-10 h-10 rounded-lg bg-primary/10 hover:bg-primary/20 flex items-center justify-center text-primary transition-colors font-bold"
+                >
+                  M
+                </motion.a>
               </div>
             </motion.div>
           </motion.div>
