@@ -1,6 +1,6 @@
 import PageTransition from "@/components/PageTransition";
-import Hero3D from "@/components/Hero3D";
 import { motion } from "framer-motion";
+import profilePic from "@/assets/profilepic.jpeg";
 import { ArrowDown } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { useNavigate } from "react-router-dom";
@@ -86,15 +86,22 @@ const Home = () => {
             </motion.div>
           </motion.div>
 
-          {/* Right Content - 3D Element */}
+          {/* Right Content - Profile Image */}
           <motion.div
             initial={{ opacity: 0, scale: 0.8 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ delay: 0.4, duration: 0.8 }}
-            className="relative"
+            className="relative flex items-center justify-center"
           >
-            <div className="absolute inset-0 bg-gradient-to-r from-primary/20 to-accent/20 blur-3xl rounded-full" />
-            <Hero3D />
+            <div className="absolute inset-0 bg-gradient-to-r from-primary/30 to-accent/30 blur-3xl rounded-full" />
+            <div className="relative">
+              <div className="absolute -inset-1 bg-gradient-to-r from-primary to-accent rounded-full blur-md opacity-75 animate-pulse" />
+              <img
+                src={profilePic}
+                alt="Tarun Kumar"
+                className="relative w-72 h-72 md:w-96 md:h-96 object-cover rounded-full border-4 border-primary/50 shadow-2xl"
+              />
+            </div>
           </motion.div>
         </div>
       </div>
